@@ -141,6 +141,9 @@ def handleClient(clientConnStream):
         clientConnStream.send((str(2) + "-!-" + userIdentity + "-!-" + "True").encode())
 
     elif int(mode) == 3:
+        answer = input("approve user " + userIdentity + "decription? y\n: ")
+        if answer != y:
+            break
         userKey, iVector = getClientKeyFromDB(str(userIdentity))
         clientConnStream.send(
             (str(3) + "-!-" + str(userIdentity) + "-!-" + userKey + "--KEY-PROCEDURE--" + iVector).encode())
