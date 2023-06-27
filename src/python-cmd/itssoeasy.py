@@ -542,7 +542,7 @@ def selfRemove():
 def clientIsIdiot():
     result = input(b64dec(tkmsgMsg) + " y/n: ")
     # print(result)
-    if result != "n":
+    if result == "n":
         return True
     else:
         return False
